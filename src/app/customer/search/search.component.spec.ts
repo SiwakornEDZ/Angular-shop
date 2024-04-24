@@ -11,7 +11,7 @@ describe('SearchComponent', () => {
       declarations: [SearchComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -25,13 +25,37 @@
             <td (click)="removeFromCart(item.productId)"><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></span></td>
           </tr>
 
-
-
-          <!-- tax + subtotal -->
+<!--                <tr class="extracosts">-->
+<!--                  <td class="light">Select Coupons</td>-->
+<!--                  <td colspan="2" class="light">-->
+<!--                    <select [(ngModel)]="selectedCoupon">-->
+<!--                      <option *ngFor="let coupon of coupons" [value]="coupon">{{coupon}}</option>-->
+<!--                    </select>-->
+<!--                  </td>-->
+<!--                  <td style="color: wheat;">฿ {{this.priceSummary.total}}</td>-->
+<!--                  <td>&nbsp;</td>-->
+<!--                </tr>-->
+                <!-- New dropdown for selectedCoupons -->
           <tr class="extracosts">
+            <td class="light">Enter Coupon</td>
+            <td colspan="2" class="light"></td>
+            <td colspan="2" class="light">
+              <input type="text" [(ngModel)]="selectedCoupon">
+              <button (click)="confirmCoupon()">Confirm</button>
+            </td>
+          </tr>
+          <tr *ngIf="!percentage" class="extracosts">
             <td class="light">Discount</td>
             <td colspan="2" class="light"></td>
-            <td style="color: wheat;">฿ {{this.priceSummary.tax + this.priceSummary.delivery}}</td>
+            <td style="color: wheat;">฿ {{this.priceSummary.discount}}</td>
+<!--            <td style="color: wheat;">฿ {{this.priceSummary.tax + this.priceSummary.delivery}}</td>-->
+            <td>&nbsp;</td>
+          </tr>
+          <tr *ngIf="percentage" class="extracosts">
+            <td class="light">Discount</td>
+            <td colspan="2" class="light"></td>
+            <td style="color: wheat;">{{this.priceSummary.discount}}</td>
+            <!--            <td style="color: wheat;">฿ {{this.priceSummary.tax + this.priceSummary.delivery}}</td>-->
             <td>&nbsp;</td>
           </tr>
           <tr class="totalprice">
@@ -41,9 +65,9 @@
           </tr>
 
           <!-- checkout btn -->
-          <tr class="checkoutrow">
-            <td colspan="5" class="checkout"><button id="submitbtn" (click)="checkoutOrder()">Checkout Now!</button></td>
-          </tr>
+<!--          <tr class="checkoutrow">-->
+<!--            <td colspan="5" class="checkout"><button id="submitbtn" (click)="checkoutOrder()">Checkout Now!</button></td>-->
+<!--          </tr>-->
         </tbody>
       </table>
     </div>

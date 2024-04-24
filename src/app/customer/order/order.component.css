@@ -41,7 +41,7 @@ img{
 
 .cancel-order{
   padding: 5px;
-  background-color: #573b8a;
+  background-color: lightsalmon;
   color: white;
   cursor: pointer;
 }
@@ -49,7 +49,7 @@ img{
 .order-presence h2{
   margin-top: 150px;
   margin-bottom: 50px;
-  color: #573b8a;
+  color: coral;
   display: flex;
   justify-content: center;
   cursor: pointer;

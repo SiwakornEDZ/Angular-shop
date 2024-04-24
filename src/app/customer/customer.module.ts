@@ -8,7 +8,7 @@ import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderComponent } from './order/order.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -20,10 +20,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CheckoutComponent,
     OrderComponent
   ],
-  imports: [
-    CommonModule,
-    CustomerRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        CustomerRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class CustomerModule { }

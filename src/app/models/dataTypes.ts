@@ -20,17 +20,17 @@ export interface Product{
     productId: string
 }
 
-export interface Cart{ 
-    productId: string, 
-    _id: string, 
-    title: string, 
-    price: number, 
-    color: string, 
-    categories: string, 
-    desc: string, 
-    image: string, 
-    size: string, 
-    quantity?: number | undefined, 
+export interface Cart{
+    productId: string,
+    _id: string,
+    title: string,
+    price: number,
+    color: string,
+    categories: string,
+    desc: string,
+    image: string,
+    size: string,
+    quantity?: number | undefined,
     cart?: any,
     cartCount?: number | undefined
 }
@@ -55,4 +55,20 @@ export interface Order{
     },
     orderStatus: string
 
+}
+
+export interface Coupon{
+  _id: string,
+  couponName: string,
+  couponType: string,
+  discountType: string,
+  percentage: number | null,
+  amount: number | null,
+  discountTypeOnTop: string,
+  category: string,
+  percentageOnTop: number | null,
+  pointOnTop: number | null,
+  everyThb: number | null,
+  discountThb: number | null,
+  couponId: string
 }

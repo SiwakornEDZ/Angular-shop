@@ -13,7 +13,7 @@
 	height: 500px;
 	background: red;
 	overflow: hidden;
-	background: linear-gradient(to bottom, #573b8a, #302b63, purple);
+	background: linear-gradient(to bottom, coral, #302b63, coral);
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 	position: fixed;
@@ -55,7 +55,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: coral;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -76,7 +76,7 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: coral;
 	transform: scale(.6);
 }
 
@@ -84,7 +84,7 @@ button:hover{
 	transform: translateY(-500px);
 }
 #chk:checked ~ .login label{
-	transform: scale(1);	
+	transform: scale(1);
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
@@ -101,10 +101,10 @@ button:hover{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #6d44b8;
+	color: coral;
 }
 
 h5{
 	margin-left: 42%;
-	color: #573b8a;
+	color: coral;
 }

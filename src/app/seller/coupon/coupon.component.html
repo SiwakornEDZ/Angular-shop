@@ -1,1 +1,135 @@
-<p>coupon works!</p>
+<h1>Add New Coupon</h1>
+
+<!-- Create Form -->
+<form id="form" [formGroup]="couponForm" (ngSubmit)="onSubmit()">
+  <!-- Details -->
+  <div class="form-control">
+    <label>Coupon Name</label>
+    <input formControlName="couponName" type="text" name="couponName" placeholder="Enter Coupon Name" />
+  </div>
+  <div class="form-control">
+    <label>Coupon Type</label>
+    <select formControlName="couponType" name="couponType">
+      <option value="">Select Coupon Type</option>
+      <option value="coupon">coupon</option>
+      <option value="ontop">on top</option>
+      <option value="seasonal">seasonal</option>
+    </select>
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'coupon'" class="form-control">
+    <label>Discount Type Coupon</label>
+    <select formControlName="discountType" name="discountType">
+      <option value="">Select Discount Type</option>
+      <option value="percentage">Percentage</option>
+      <option value="amount">Amount</option>
+    </select>
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'coupon'
+    && couponForm?.get('discountType')?.value === 'percentage'" class="form-control">
+    <label>Percentage</label>
+    <input formControlName="percentage" type="number" name="percentage" placeholder="Enter Percentage" />
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'coupon'
+  && couponForm?.get('discountType')?.value === 'amount'" class="form-control">
+    <label>Amount</label>
+    <input formControlName="amount" type="number" name="amount" placeholder="Enter Amount" />
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'ontop'" class="form-control">
+    <label>Discount Type on Top</label>
+    <select formControlName="discountTypeOnTop" name="discountTypeOnTop">
+      <option value="">Select Discount Type</option>
+      <option value="percentageontop">percentage by item category</option>
+      <option value="amountontop">Amount</option>
+    </select>
+  </div>
+
+  <div *ngIf="couponForm?.get('discountTypeOnTop')?.value === 'percentageontop'" class="form-control">
+    <label>Category</label>
+    <select formControlName="category" name="category">
+      <option value="">Select Category</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Accessories">Accessories</option>
+      <option value="Electronics">Electronics</option>
+    </select>
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'ontop' && couponForm?.get('discountTypeOnTop')?.value === 'percentageontop'" class="form-control">
+    <label>Percentage</label>
+    <input formControlName="percentageOnTop" type="number" name="percentageOnTop" placeholder="Enter Percentage" />
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'ontop' && couponForm?.get('discountTypeOnTop')?.value === 'amountontop'" class="form-control">
+    <label>Point</label>
+    <input formControlName="pointOnTop" type="number" name="pointOnTop" placeholder="Enter Point" />
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'seasonal'" class="form-control">
+    <label>Every X THB</label>
+    <input formControlName="everyThb" type="number" name="everyThb" placeholder="Enter X ฿" />
+  </div>
+
+  <div *ngIf="couponForm?.get('couponType')?.value === 'seasonal'" class="form-control">
+    <label>Discount Y THB</label>
+    <input formControlName="discountThb" type="number" name="discountThb" placeholder="Enter Y ฿" />
+  </div>
+
+
+
+
+  <!--<div *ngIf="couponForm?.get('category')?.value != null " class="form-control">-->
+<!--    <label>Percentage</label>-->
+<!--    <input formControlName="onTopPercentage" type="number" name="onTopPercentage" placeholder="Enter Percentage" />-->
+<!--  </div>-->
+<!--  <div class="form-control">-->
+<!--    <label>Category</label>-->
+<!--    <input-->
+<!--      formControlName="categories"-->
+<!--      type="text"-->
+<!--      name="categories"-->
+<!--      placeholder="Enter Product Category"-->
+<!--    />-->
+<!--  </div>-->
+
+<!--  <div class="form-control">-->
+<!--    <label>Size</label>-->
+<!--    <input-->
+<!--      formControlName="size"-->
+<!--      type="text"-->
+<!--      name="size"-->
+<!--      placeholder="Enter Product Size"-->
+<!--    />-->
+<!--  </div>-->
+
+<!--  <div class="form-control">-->
+<!--    <label>Image URL</label>-->
+<!--    <input-->
+<!--      formControlName="image"-->
+<!--      type="text"-->
+<!--      name="image"-->
+<!--      placeholder="Enter Image Url"-->
+<!--    />-->
+<!--  </div>-->
+
+<!--  <div class="form-control">-->
+<!--    <label for="comment">Description</label>-->
+<!--    <textarea-->
+<!--      formControlName="desc"-->
+<!--      name="text"-->
+<!--      id=""-->
+<!--      cols="30"-->
+<!--      rows="8"-->
+<!--      name="desc"-->
+<!--      placeholder="Enter Product Description"-->
+<!--    ></textarea>-->
+<!--  </div>-->
+
+  <p class="err-msg">{{ couponMsg }}</p>
+
+  <button class="form-button">Submit</button>
+</form>
+
+

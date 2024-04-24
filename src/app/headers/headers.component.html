@@ -4,14 +4,14 @@
 
         <div class="nav-search" *ngIf="menuType!=='seller'">
 
-            <input #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" type="text" placeholder="Search for Products" >
-            <button (click)="onSearch(searchInput.value)"><i class="fa fa-search"></i>&nbsp;Search</button>
+<!--            <input #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" type="text" placeholder="Search for Products" >-->
+<!--            <button (click)="onSearch(searchInput.value)"><i class="fa fa-search"></i>&nbsp;Search</button>-->
 
-            <ul class="suggested-result" *ngIf="searchResults">
-                <li *ngFor="let item of searchResults">
-                    <a (mousedown)="redirectToDetails(item._id)">{{item.title}}</a>
-                </li>
-            </ul>
+<!--            <ul class="suggested-result" *ngIf="searchResults">-->
+<!--                <li *ngFor="let item of searchResults">-->
+<!--                    <a (mousedown)="redirectToDetails(item._id)">{{item.title}}</a>-->
+<!--                </li>-->
+<!--            </ul>-->
 
         </div>
 

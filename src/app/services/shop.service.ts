@@ -78,14 +78,14 @@ export class ShopService {
   addToCart(productData: Product){
     let Headers = this.getHeaders()
     return this.http.post<Product>(`${this.url}carts`, {productId: productData._id, quantity: productData.quantity,
-    image: productData.image, title: productData.title, price: productData.price}, { headers: Headers })
+    image: productData.image, title: productData.title, price: productData.price ,categories: productData.categories}, { headers: Headers })
     .pipe(catchError(this.errorHandler))
   }
 
   addFromLocalToCart(productData: Cart){
     let Headers = this.getHeaders()
     return this.http.post<Cart>(`${this.url}carts`, {productId: productData._id, quantity: productData.quantity,
-    image: productData.image, title: productData.title, price: productData.price}, { headers: Headers })
+    image: productData.image, title: productData.title, price: productData.price ,categories: productData.categories}, { headers: Headers })
     .pipe(catchError(this.errorHandler))
   }
 

@@ -7,13 +7,13 @@
 .container{
     padding: 10px 0 10px 100px;
     /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);  */
-    background-color: #573b8a;
+    background-color: lightcoral;
     /* background: linear-gradient(to bottom, #573b8a, #302b63, purple); */
     height: 60px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     /* border-bottom: 4px solid white; */
-    border-bottom: 4px solid red;
+    /*border-bottom: 4px solid red;*/
 }
 
 .nav-search{
@@ -71,9 +71,9 @@
     background-color: #fff;
     width: 400px;
     list-style: none;
-    color: #573b8a;
+    color: lightsalmon;
     padding-left: 19px;
-    
+
 }
 
 .suggested-result li{

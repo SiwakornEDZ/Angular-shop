@@ -32,15 +32,15 @@
       placeholder="Enter Product Price"
     />
   </div>
-
   <div class="form-control">
     <label>Category</label>
-    <input
-      formControlName="categories"
-      type="text"
-      name="categories"
-      placeholder="Enter Product Category"
-    />
+    <select formControlName="categories" name="categories">
+      <option value="">Select Product Category</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Accessories">Accessories</option>
+      <option value="Electronics">Electronics</option>
+      <option value="others">other</option>
+    </select>
   </div>
 
   <div class="form-control">
