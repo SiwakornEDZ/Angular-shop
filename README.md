@@ -1,6 +1,14 @@
+## Profile
+* Siwakorn Kantanabat
+* siwakornqwer@gmail.com
+  
 # Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version  17.3.5
+* node.js version  20.12.0
+* please run backend first & add sighup Seller to add Product and add Coupon with role seller
+* Second
+* sign up with customer add item yo cart and go to cart to use coupon
 
 ## Development server
 
