@@ -26,7 +26,6 @@
             <ul *ngSwitchCase="'customer'">
                 <li routerLink="/">Shop</li>
                 <li routerLink="/cart">Cart [{{cartCount}}]</li>
-                <li routerLink="/orders">Orders</li>
                 <li (click)="onCustomerLogout()">Logout</li>
                 <div class="dropdown">
                     <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn"><i class="fa fa-info-circle"></i></li>

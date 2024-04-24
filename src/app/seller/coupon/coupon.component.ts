@@ -61,6 +61,7 @@ export class CouponComponent {
   getTimeout(){
     setTimeout(() => {
       this.couponMsg = undefined
+      this.couponForm
     }, 4000);
   }
 
