@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit{
         if(res && res.length){
           this.allSearchedProducts = res
         }else if(this.allSearchedProducts===undefined){
-          console.log(this.allSearchedProducts);
+          // console.log(this.allSearchedProducts);
 
           this.noResultsMsg = 'No Results Found'
         }

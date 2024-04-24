@@ -45,7 +45,7 @@ export class CartComponent implements OnInit , OnChanges{
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['selectedCoupons'] && !changes['selectedCoupons'].firstChange) {
-      console.log(this.selectedCoupon);
+      // console.log(this.selectedCoupon);
       this.loadCardDetails();
     }
   }
@@ -58,8 +58,8 @@ export class CartComponent implements OnInit , OnChanges{
     this.enteredCouponName = this.selectedCoupon;
     // this.selectedCoupons = this.allcoupon?.filter(coupon => coupon.couponName.includes(this.enteredCouponName));
     this.selectedCoupons = this.allcoupon?.filter(coupon => coupon.couponName === this.enteredCouponName);
-    console.log(`Searching for coupon: ${this.enteredCouponName}`);
-    console.log(this.selectedCoupons);
+    // console.log(`Searching for coupon: ${this.enteredCouponName}`);
+    // console.log(this.selectedCoupons);
   }
 
   confirmCoupon() {
@@ -67,27 +67,27 @@ export class CartComponent implements OnInit , OnChanges{
       console.error('No coupon selected');
       return;
     }
-    console.log(`Coupon confirmed: ${this.selectedCoupon}`);
-    console.log(this.itemWithCategory);
+    // console.log(`Coupon confirmed: ${this.selectedCoupon}`);
+    // console.log(this.itemWithCategory);
     this.enteredCouponName = this.selectedCoupon;
     // this.selectedCoupons = this.allcoupon?.filter(coupon => coupon.couponName.includes(this.enteredCouponName));
-    console.log(`Searching for coupon: ${this.enteredCouponName}`);
-    console.log(this.itemWithCategory);
+    // console.log(`Searching for coupon: ${this.enteredCouponName}`);
+    // console.log(this.itemWithCategory);
     this.selectedCoupons = this.allcoupon?.filter(coupon => coupon.couponName === this.enteredCouponName);
-    console.log(`Searching for coupon: ${this.enteredCouponName}`);
+    // console.log(`Searching for coupon: ${this.enteredCouponName}`);
     if (this.selectedCoupons && this.selectedCoupons.length > 0) {
-      console.log('Found matching coupons');
-      console.log(this.selectedCoupons);
+      // console.log('Found matching coupons');
+      // console.log(this.selectedCoupons);
       // console.log(this.selectedCoupons[0].category);
       if(this.selectedCoupons[0].discountType === 'percentage'){
         this.percentage = this.selectedCoupons[0].discountType === 'percentage'
-        console.log(this.percentage)
+        // console.log(this.percentage)
         // @ts-ignore
         this.priceSummary.discount = this.selectedCoupons[0].percentage + '%';
         // @ts-ignore
         this.priceSummary.total = this.priceSummary.price - (this.priceSummary.price * this.selectedCoupons[0].percentage/100);
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].discountType === 'amount'){
         this.percentage = false;
@@ -98,11 +98,11 @@ export class CartComponent implements OnInit , OnChanges{
         if(this.priceSummary.total < 0){
           this.priceSummary.total = 0;
         }
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].discountTypeOnTop === 'percentageontop' && this.selectedCoupons[0].category.includes('Electronic')){
-        console.log('Discount on top of the discount');
+        // console.log('Discount on top of the discount');
         this.percentage = this.selectedCoupons[0].discountTypeOnTop === 'percentageontop'
         this.shopService.getCart().subscribe((res)=> {
           this.cart = res.cart.products
@@ -118,16 +118,16 @@ export class CartComponent implements OnInit , OnChanges{
           })
         })
 
-        console.log(this.percentage)
+        // console.log(this.percentage)
         // @ts-ignore
         this.priceSummary.discount = this.selectedCoupons[0].percentageOnTop + '%';
         // @ts-ignore
         // this.priceSummary.total = this.priceSummary.price - (this.priceSummary.price * this.selectedCoupons[0].percentageOnTop/100);
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].discountTypeOnTop === 'percentageontop' && this.selectedCoupons[0].category.includes('Accessories')){
-        console.log('Discount on top of the Accessories discount');
+        // console.log('Discount on top of the Accessories discount');
         this.loadCardDetails()
         this.percentage = this.selectedCoupons[0].discountTypeOnTop === 'percentageontop'
         this.shopService.getCart().subscribe((res)=> {
@@ -143,16 +143,16 @@ export class CartComponent implements OnInit , OnChanges{
             this.priceSummary.total = this.priceSummary.total - price
           })
         })
-        console.log(this.percentage)
+        // console.log(this.percentage)
         // @ts-ignore
         this.priceSummary.discount = this.selectedCoupons[0].percentageOnTop + '%';
         // @ts-ignore
         // this.priceSummary.total = this.priceSummary.price - (this.priceSummary.price * this.selectedCoupons[0].percentageOnTop/100);
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].discountTypeOnTop === 'percentageontop' && this.selectedCoupons[0].category.includes('Clothing')){
-        console.log('Discount on top of the Clothing discount');
+        // console.log('Discount on top of the Clothing discount');
         this.loadCardDetails()
         this.percentage = this.selectedCoupons[0].discountTypeOnTop === 'percentageontop'
         this.shopService.getCart().subscribe((res)=> {
@@ -187,8 +187,8 @@ export class CartComponent implements OnInit , OnChanges{
         if(this.priceSummary.total < 0){
           this.priceSummary.total = 0;
         }
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].couponType === 'seasonal'){
         this.percentage = false;
@@ -203,8 +203,8 @@ export class CartComponent implements OnInit , OnChanges{
         if(this.priceSummary.total < 0){
           this.priceSummary.total = 0;
         }
-        console.log(this.priceSummary.price);
-        console.log(this.selectedCoupons[0].amount);
+        // console.log(this.priceSummary.price);
+        // console.log(this.selectedCoupons[0].amount);
       }
     } else {
       console.log('No matching coupons found');
@@ -247,7 +247,7 @@ export class CartComponent implements OnInit , OnChanges{
         }
       })
       this.itemWithCategory = Array.from(this.itemWithCategory);
-      console.log(this.itemWithCategory);
+      // console.log(this.itemWithCategory);
       let desiredCouponType = this.selectedCoupon;
       this.selectedCoupons = this.allcoupon?.filter(coupon => coupon.couponType === desiredCouponType);
       // console.log(this.allcoupon?.find(coupon => coupon.code === this.selectedCoupon)?.discount)
