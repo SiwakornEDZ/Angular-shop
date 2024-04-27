@@ -47,7 +47,7 @@
     </select>
   </div>
 
-  <div *ngIf="couponForm?.get('discountTypeOnTop')?.value === 'percentageontop'" class="form-control">
+  <div *ngIf="couponForm?.get('discountTypeOnTop')?.value === 'percentageontop' && couponForm?.get('couponType')?.value === 'ontop'" class="form-control">
     <label>Category</label>
     <select formControlName="category" name="category">
       <option value="">Select Category</option>
