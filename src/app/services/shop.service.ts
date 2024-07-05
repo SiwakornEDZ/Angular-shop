@@ -9,7 +9,7 @@ import { catchError, throwError } from 'rxjs';
 export class ShopService {
 
   public replaceUrl = 'http://localhost:5002/'
-  public url = 'https://back-vercel-shop.vercel.app/'
+  public url = 'http://localhost:5002/'
 
   public cartDataLength = new EventEmitter<Product[] | []>()
 
