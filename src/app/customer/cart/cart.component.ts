@@ -187,7 +187,7 @@ export class CartComponent implements OnInit , OnChanges{
         if(this.priceSummary.total < 0){
           this.priceSummary.total = 0;
         }
-        // console.log(this.priceSummary.price);
+        // console.log(this.priceSummary.price); 123
         // console.log(this.selectedCoupons[0].amount);
       }
       if(this.selectedCoupons[0].couponType === 'seasonal'){
