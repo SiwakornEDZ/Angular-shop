@@ -11,7 +11,7 @@ import { ShopService } from './shop.service';
 export class CustomerSignupService {
 
   public replaceUrl = 'http://localhost:5002/'
-  public url = 'http://localhost:5002/'
+  public url = 'https://back-vercel-shop.vercel.app/'
   public signupMsg = new EventEmitter<boolean>(false)
   public isCustomerLoggedIn = new BehaviorSubject<boolean>(false)
 

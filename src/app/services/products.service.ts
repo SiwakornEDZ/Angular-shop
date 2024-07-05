@@ -9,7 +9,7 @@ import { Product } from '../models/dataTypes';
 export class ProductsService {
 
   public replaceUrl = 'http://localhost:5002/'
-  public url = 'http://localhost:5002/'
+  public url = 'https://back-vercel-shop.vercel.app/'
 
   constructor(private http: HttpClient) { }
 

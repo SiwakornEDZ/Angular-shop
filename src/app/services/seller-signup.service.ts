@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SellerSignupService {
 
   public replaceUrl = 'http://localhost:5002/'
-  public url = 'http://localhost:5002/'
+  public url = 'https://back-vercel-shop.vercel.app//'
   public signupMsg = new EventEmitter<boolean>(false)
   public isSellerLoggedIn = new BehaviorSubject<boolean>(false)
 
