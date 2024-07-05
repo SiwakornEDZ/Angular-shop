@@ -9,7 +9,7 @@ import { Coupon } from '../models/dataTypes';
 export class CouponService {
 
   public replaceUrl = 'http://localhost:5002/'
-  public url = 'https://back-vercel-shop.vercel.app'
+  public url = 'https://back-vercel-shop.vercel.app/'
 
   constructor(private http: HttpClient) { }
 
