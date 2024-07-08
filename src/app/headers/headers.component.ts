@@ -15,10 +15,10 @@ export class HeadersComponent implements OnInit{
   public menuType: string = 'default';
   public userName: string = ''
   public isHidden: boolean = false
-  public searchResults: undefined | Product[] 
+  public searchResults: undefined | Product[]
   public cartCount: number = 0
 
-  constructor(private router: Router, private sellerSignupService: SellerSignupService, 
+  constructor(private router: Router, private sellerSignupService: SellerSignupService,
     private customerSignupService: CustomerSignupService, private shopService: ShopService){}
 
   ngOnInit(): void {
@@ -26,22 +26,31 @@ export class HeadersComponent implements OnInit{
       if(res.url){
         let sellerStore = localStorage.getItem('admin')
         let sellerData = sellerStore && JSON.parse(sellerStore)
+        console.log('seller data', sellerData);
 
         let customerStore = localStorage.getItem('customer')
         let customerData = customerStore && JSON.parse(customerStore)
+        console.log('customer data', customerData);
+        if(sellerData !== null && customerData !== null){
+          localStorage.removeItem('admin')
+          localStorage.removeItem('customer')
+        }
 
     if(sellerData && res.url.includes('products')){
       this.sellerSignupService.getUser(sellerData).subscribe((res)=>{
         this.userName = res.username
         this.menuType = 'seller'
+        console.log('seller status' ,this.menuType);
       })
     }else if(customerData){
       this.customerSignupService.getUser(customerData).subscribe((res)=>{
         this.userName = res.username
         this.menuType = 'customer'
+        console.log('customer status' ,this.menuType);
       })
     }else{
       this.menuType = 'default'
+      console.log('default status' ,this.menuType);
     }
     }
     })
@@ -62,7 +71,7 @@ export class HeadersComponent implements OnInit{
       this.cartCount = res.length
       // console.log(res);
     })
-    
+
   }
 
   onCustomerLogout(){
@@ -86,13 +95,13 @@ export class HeadersComponent implements OnInit{
       this.shopService.searchProducts(element.value).subscribe((res)=>{
         if(res.length>5){
           res.length = 5
-        } 
+        }
         this.searchResults = res
       })
     }
-    
+
   }
-  
+
   hideSearch(){
     this.searchResults = undefined
   }
