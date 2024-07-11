@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Food Store Calculator</h1>
+  <div *ngFor="let item of orderKeys()" class="item">
+    <label>{{ item }}:</label>
+    <input type="number" [(ngModel)]="orders[item]" min="0">
+  </div>
+  <div class="checkbox-container">
+    <input type="checkbox" [(ngModel)]="memberCard">
+    <label>Member card discount</label>
+  </div>
+  <button (click)="calculate()">Calculate</button>
+  <div *ngIf="totalPrice !== null" class="total-price">
+    <h2>Total Price: {{ totalPrice }} THB</h2>
+  </div>
+</div>
