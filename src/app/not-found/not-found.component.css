@@ -1,0 +1,7 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: coral;
+    margin-top: 10%;
+}
