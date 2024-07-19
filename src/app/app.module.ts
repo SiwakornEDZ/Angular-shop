@@ -4,7 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorService } from './services/calculator.service';
 import {FormsModule} from "@angular/forms";
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  { path: '', component: CalculatorComponent }
+];
 
 @NgModule({
   declarations: [
@@ -13,11 +19,11 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
     HttpClientModule,
-    FormsModule
+    RouterModule.forRoot(routes) // Import RouterModule with routes
   ],
-  providers: [],
+  providers: [CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

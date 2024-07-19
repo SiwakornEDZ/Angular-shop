@@ -17,6 +17,7 @@ export class CalculatorComponent {
     "Purple set": 0,
     "Orange set": 0
   };
+
   memberCard = false;
   totalPrice: number | null = null;
 
