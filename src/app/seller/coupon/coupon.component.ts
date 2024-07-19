@@ -38,7 +38,6 @@ export class CouponComponent {
     pointOnTop: ['' ,[Validators.pattern(this.percentagePattern)]],
     everyThb: ['' ,[Validators.pattern(this.percentagePattern)]],
     discountThb: ['' ,[Validators.pattern(this.percentagePattern)]],
-
   })
 
   onSubmit(){
@@ -47,8 +46,8 @@ export class CouponComponent {
       console.log('rf', res);
       if(res && res._id){
         this.couponMsg = 'Coupon is successfully added'
+        this.getTimeout()
       }
-      this.getTimeout()
     }, (err)=>{
       if(err){
         console.log(err.message);
@@ -61,8 +60,21 @@ export class CouponComponent {
   getTimeout(){
     setTimeout(() => {
       this.couponMsg = undefined
-      this.couponForm
-    }, 4000);
+      this.couponForm.reset();
+      this.couponForm.patchValue({
+        couponType: '',
+        discountType: '',
+        discountTypeOnTop: '',
+        category: '',
+        couponName: '',
+        percentage: '',
+        amount: '',
+        percentageOnTop: '',
+        pointOnTop: '',
+        everyThb: '',
+        discountThb: '',
+      });
+      }, 2000);
   }
 
 }
