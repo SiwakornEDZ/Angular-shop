@@ -78,30 +78,27 @@
       <ul *ngSwitchCase="'customer'">
         <li routerLink="/">Shop</li>
         <li routerLink="/cart">Cart [{{cartCount}}]</li>
-        <li (click)="onCustomerLogout()">Logout</li>
         <div class="dropdown">
           <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn">
-            <i class="fa fa-info-circle"></i>
+            <a>&nbsp; &nbsp;Welcome {{userName | titlecase}}!</a>
           </li>
-          <div class="dropdown-content">
-            <a *ngIf="isHidden">&nbsp; &nbsp;{{userName | titlecase}}!</a>
-          </div>
         </div>
+        <li (click)="onCustomerLogout()">Logout</li>
       </ul>
 
       <ul *ngSwitchCase="'seller'">
         <li routerLink="/products">Products</li>
         <li routerLink="/products/upload">Add Product</li>
         <li routerLink="/products/coupon">Add coupon</li>
-        <li (click)="onSellerLogout()">Logout</li>
         <div class="dropdown">
           <li (mouseenter)="isHidden = !isHidden" (mouseleave)="isHidden = !isHidden" class="dropbtn">
-            <i class="fa fa-info-circle"></i>
+            <a>&nbsp; &nbsp;Welcome {{userName | titlecase}}!</a>
           </li>
-          <div class="dropdown-content">
-            <a *ngIf="isHidden">&nbsp; &nbsp;Welcome {{userName | titlecase}}!</a>
-          </div>
+<!--          <div class="dropdown-content">-->
+<!--            <a *ngIf="isHidden">&nbsp; &nbsp;Welcome {{userName | titlecase}}!</a>-->
+<!--          </div>-->
         </div>
+        <li (click)="onSellerLogout()">Logout</li>
       </ul>
     </div>
   </nav>
