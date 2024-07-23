@@ -21,7 +21,9 @@ export class CalculatorComponent {
   memberCard = false;
   totalPrice: number | null = null;
 
-  constructor(private calculatorService: CalculatorService) {}
+  constructor(
+    private calculatorService: CalculatorService
+  ) {}
 
   calculate() {
     this.calculatorService.calculatePrice(this.orders, this.memberCard).subscribe(
@@ -37,6 +39,5 @@ export class CalculatorComponent {
   orderKeys() {
     return Object.keys(this.orders);
   }
-
 
 }

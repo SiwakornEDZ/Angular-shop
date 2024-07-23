@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CalculatorService {
-  private apiUrl = 'http://127.0.0.1:5002/calculate';
+  private apiv1cal = 'http://127.0.0.1:5002/calculate';
 
   constructor(private http: HttpClient) {}
 
   calculatePrice(orders: any, memberCard: boolean): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { orders, member_card: memberCard });
+    return this.http.post<any>(this.apiv1cal, { orders, member_card: memberCard });
   }
 }
