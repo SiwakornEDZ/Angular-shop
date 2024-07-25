@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Food Store Calculator</h1>
   <div *ngFor="let item of orderKeys()" class="item">
-    <label>{{ item }} : </label>
+    <label>{{ item }} : {{ prices[item]}}</label>
     <input type="number" [(ngModel)]="orders[item]" min="0">
   </div>
   <div class="checkbox-container">

@@ -15,8 +15,21 @@ export class CalculatorComponent {
     "Yellow set": 0,
     "Pink set": 0,
     "Purple set": 0,
-    "Orange set": 0
+    "Orange set": 0,
+    "Black set": 0
   };
+  prices: any = {
+    "Red set": 50,
+    "Green set": 40,
+    "Blue set": 30,
+    "Yellow set": 50,
+    "Pink set": 80,
+    "Purple set": 90,
+    "Orange set": 120,
+    "Black set": 200
+  }
+  //black set :200
+  //black set 3 set discont 20%
 
   memberCard = false;
   totalPrice: number | null = null;
