@@ -44,7 +44,7 @@ export class CalculatorComponent {
         this.totalPrice = response.total_price;
       },
       error => {
-        console.error('Error calculating price:', error);
+        console.error('Error calculating price :', error);
       }
     );
   }
